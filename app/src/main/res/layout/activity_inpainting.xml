@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <!-- Top Toolbar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/app_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/surface_dark"
+        android:paddingHorizontal="12dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_glass_button"
+            android:contentDescription="Go Back"
+            android:padding="6dp"
+            android:src="@android:drawable/ic_menu_revert"
+            app:tint="@color/accent_cyan"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="GENERATIVE INPAINTING"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_back"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Scrollable configuration workspace -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Interactive instructions card -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Load Source Image"
+                android:textColor="@color/accent_cyan"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_pick_image"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="12dp"
+                android:text="Choose Image from Gallery"
+                android:textColor="@color/accent_cyan"
+                app:icon="@drawable/ic_audio"
+                app:backgroundTint="@color/accent_cyan_transparent" />
+
+            <!-- Interactive Draw workspace -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Paint/Scribble Retouch Mask with your finger"
+                android:textColor="@color/accent_cyan"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- Mask drawing container with layered views -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="14dp"
+                app:cardBackgroundColor="@color/black">
+
+                <FrameLayout
+                    android:id="@+id/drawing_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- Background Reference Image -->
+                    <ImageView
+                        android:id="@+id/iv_inpainting_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerInside" />
+
+                    <!-- Custom Canvas Scratchpad Overlay Drawing View -->
+                    <!-- We'll implement a custom view class for com.example.ai.InpaintingCanvas -->
+                    <com.example.ai.InpaintingCanvas
+                        android:id="@+id/inpainting_canvas"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <!-- Hint Overlay displayed before loading an image -->
+                    <TextView
+                        android:id="@+id/tv_canvas_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="[ Empty Canvas - Choose file first ]"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp" />
+
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Custom text instruction to guide inpainting -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Inpaint Text Descriptor (Optional)"
+                android:textColor="@color/accent_cyan"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/et_inpainting_prompt"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_glass_panel"
+                android:hint="Replace masked zone with (e.g. golden ring, cosmic flame, flower...)"
+                android:textColorHint="@color/text_secondary"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                android:paddingHorizontal="14dp"
+                android:inputType="text" />
+
+            <!-- Action buttons -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_inpaint"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="Execute Inpainting Model"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/accent_cyan"
+                app:cornerRadius="26dp" />
+
+            <!-- Clear canvas button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_clear_mask"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="4dp"
+                android:text="Reset Mask Paint"
+                android:textColor="@color/red_accent" />
+
+            <!-- Simulated progression loads -->
+            <ProgressBar
+                android:id="@+id/pb_inpainting"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/accent_cyan"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_inpainting_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                 android:layout_marginTop="4dp"
+                android:text="AI generating replacement filling..."
+                android:textColor="@color/accent_cyan"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

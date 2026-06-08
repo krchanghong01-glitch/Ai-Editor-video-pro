@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_dark">#FF0A0A0C</color>
+    <color name="surface_dark">#FF121215</color>
+    <color name="surface_dark_glass">#1AFFFFFF</color>
+    <color name="accent_cyan">#22D3EE</color>
+    <color name="accent_cyan_transparent">#1F22D3EE</color>
+    <color name="accent_cyan_dark">#0891B2</color>
+    <color name="accent_blue">#2563EB</color>
+    <color name="text_primary">#FFF1F5F9</color>
+    <color name="text_secondary">#FF64748B</color>
+    <color name="red_accent">#FFEF4444</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="accent_gold">#FFF59E0B</color>
+    <color name="track_bg">#FF0E0E12</color>
+</resources>

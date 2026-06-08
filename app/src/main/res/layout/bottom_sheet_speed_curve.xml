@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/surface_dark"
+    app:behavior_peekHeight="320dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SPEED CONTROL &amp; BEZIER SPEED CURVE"
+        android:textColor="@color/accent_cyan"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Speed presets row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_speed_025c"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:text="0.25x"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/surface_dark_glass" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_speed_05c"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:text="0.5x"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/surface_dark_glass" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_speed_1c"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:text="1.0x"
+            android:textColor="@color/accent_cyan"
+            app:backgroundTint="@color/accent_cyan_transparent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_speed_2c"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:text="2.0x"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/surface_dark_glass" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bezier Curve Tuning (Tap points to model acceleration)"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Bezier Graph visualizer card -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/black">
+
+        <!-- Custom drawable drawing placeholder for speed curve -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp">
+
+            <!-- Horizontal Grid Lines -->
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#15FFFFFF" android:layout_centerVertical="true"/>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#10FFFFFF" android:layout_alignParentTop="true" android:layout_marginTop="30dp"/>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#10FFFFFF" android:layout_alignParentBottom="true" android:layout_marginBottom="30dp"/>
+
+            <!-- Simulated Bezier line -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/accent_cyan"
+                android:layout_centerInParent="true" />
+
+            <!-- Key points markers -->
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_keyframe"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                app:tint="@color/accent_cyan"/>
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_keyframe"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:tint="@color/accent_cyan"/>
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_keyframe"
+                android:layout_centerInParent="true"
+                app:tint="@color/white"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_speed_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apply Speed"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/accent_cyan" />
+
+    </LinearLayout>
+
+</LinearLayout>

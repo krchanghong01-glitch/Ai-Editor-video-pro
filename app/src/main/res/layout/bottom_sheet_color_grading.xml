@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/surface_dark"
+    app:behavior_peekHeight="360dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MANUAL COLOR GRADING PANELS"
+        android:textColor="@color/accent_cyan"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="14dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="240dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Brightness -->
+            <TextView
+                android:id="@+id/lbl_brightness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Brightness: 0"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_brightness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:valueFrom="-50.0"
+                android:valueTo="50.0"
+                android:value="0.0"
+                app:thumbColor="@color/accent_cyan"
+                app:trackColorActive="@color/accent_cyan" />
+
+            <!-- Contrast -->
+            <TextView
+                android:id="@+id/lbl_contrast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contrast: 1.0"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_contrast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:valueFrom="0.5"
+                android:valueTo="1.5"
+                android:value="1.0"
+                app:thumbColor="@color/accent_cyan"
+                app:trackColorActive="@color/accent_cyan" />
+
+            <!-- Saturation -->
+            <TextView
+                android:id="@+id/lbl_saturation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Saturation: 1.0"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_saturation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:valueFrom="0.0"
+                android:valueTo="2.0"
+                android:value="1.0"
+                app:thumbColor="@color/accent_cyan"
+                app:trackColorActive="@color/accent_cyan" />
+
+            <!-- Temperature -->
+            <TextView
+                android:id="@+id/lbl_temperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Temperature: 0"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_temp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:valueFrom="-30.0"
+                android:valueTo="30.0"
+                android:value="0.0"
+                app:thumbColor="@color/accent_cyan"
+                app:trackColorActive="@color/accent_cyan" />
+
+            <!-- Vignette -->
+            <TextView
+                android:id="@+id/lbl_vignette"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Vignette: 0%"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider_vignette"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:valueFrom="0.0"
+                android:valueTo="100.0"
+                android:value="0.0"
+                app:thumbColor="@color/accent_cyan"
+                app:trackColorActive="@color/accent_cyan" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_color_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm Colors"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/accent_cyan" />
+
+    </LinearLayout>
+
+</LinearLayout>

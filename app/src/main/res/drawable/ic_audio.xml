@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Musical note with circles -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,3v11.55a3,3 0 1,0 2,2.83V6h6V3h-8z" />
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M12,17M6,17" />
+</vector>

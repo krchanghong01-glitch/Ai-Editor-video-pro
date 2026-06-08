@@ -1,0 +1,6 @@
+{
+  "name": "AI Video Editor Pro",
+  "description": "Premium multi-layer video & audio editor with simulated real-time AI tools, cutout, keyframe animation, filters, chroma key, and custom speed curve editing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

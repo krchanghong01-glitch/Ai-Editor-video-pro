@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="128dp"
+    android:height="128dp"
+    android:viewportWidth="128"
+    android:viewportHeight="128">
+    <!-- Generated Image background grid / node network pattern -->
+    <path
+        android:fillColor="#FF16161F"
+        android:pathData="M0,0h128v128H0z" />
+    <path
+        android:strokeColor="#2E2E3E"
+        android:strokeWidth="1"
+        android:pathData="M20,0v128M40,0v128M60,0v128M80,0v128M100,0v128M0,20h128M0,40h128M0,60h128M0,80h128M0,100h128" />
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M64,30l5,15l15,5l-15,5l-5,15l-5,-15l-15,-5l15,-5z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M35,75l3,9l9,3l-9,3l-3,9l-3,-9l-9,-3l9,-3z" />
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M95,80l2.5,7.5l7.5,2.5l-7.5,2.5l-2.5,7.5l-2.5,-7.5l-7.5,-2.5l7.5,-2.5z" />
+</vector>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Outer Premium Ring -->
+    <path
+        android:pathData="M 54 20 A 34 34 0 1 1 53.99 20"
+        android:strokeColor="#00E5FF"
+        android:strokeWidth="1.5" />
+
+    <!-- Play Icon Triangle in Center -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M 48 42 L 64 54 L 48 66 Z" />
+
+    <!-- Scissors left loop -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 36,46 A 8,8 0 1,1 36,30 A 8,8 0 1,1 36,46" />
+
+    <!-- Scissors right loop -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 36,78 A 8,8 0 1,1 36,62 A 8,8 0 1,1 36,78" />
+
+    <!-- Scissors Blade connected to left ring crossing to play button side -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M 42,38 L 72,62" />
+
+    <!-- Scissors Blade connected to right ring crossing -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M 42,70 L 72,46" />
+
+    <!-- Sparkle/AI Particle 1 at top right -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M 76,28 L 78,32 L 82,34 L 78,36 L 76,40 L 74,36 L 70,34 L 74,32 Z" />
+
+    <!-- Sparkle/AI Particle 2 at bottom left -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M 28,74 L 29.5,77 L 32.5,78 L 29.5,79 L 28,82 L 26.5,79 L 23.5,78 L 26.5,77 Z" />
+
+    <!-- Sparkle/AI Particle 3 near the top (small) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 54,16 L 55,18 L 57,19 L 55,20 L 54,22 L 53,20 L 51,19 L 53,18 Z" />
+
+</vector>

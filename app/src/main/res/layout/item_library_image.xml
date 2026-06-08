@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="@color/surface_dark"
+    app:cardElevation="2dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_library_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <!-- Simple visual title text overlay -->
+        <TextView
+            android:id="@+id/tv_library_image_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#77000000"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="2dp"
+            android:textColor="@color/white"
+            android:textSize="9sp" />
+
+        <!-- Delete button indicator Overlay -->
+        <ImageButton
+            android:id="@+id/btn_delete_image"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_glass_button"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:scaleType="centerInside"
+            app:tint="@color/red_accent" />
+
+    </FrameLayout>
+
+</androidx.cardview.widget.CardView>

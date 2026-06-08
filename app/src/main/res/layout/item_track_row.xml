@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:layout_marginVertical="2dp"
+    android:background="@drawable/bg_timeline_track">
+
+    <!-- Track label badge -->
+    <TextView
+        android:id="@+id/tv_track_label"
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:background="#2E2E38"
+        android:gravity="center"
+        android:text="V1"
+        android:textColor="@color/accent_cyan"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/vertical_divider"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#15FFFFFF"
+        app:layout_constraintStart_toEndOf="@id/tv_track_label" />
+
+    <!-- Nested horizontal clips container -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_track_clips"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="4dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vertical_divider"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="120dp"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="2dp"
+    app:cardCornerRadius="8dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_timeline_track"
+        android:id="@+id/clip_root">
+
+        <!-- Optional thumbnail background -->
+        <ImageView
+            android:id="@+id/iv_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:alpha="0.6" />
+
+        <!-- Selection Highlight Frame Overlay -->
+        <View
+            android:id="@+id/selection_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_glass_card"
+            android:visibility="gone" />
+
+        <!-- Clip Title Label -->
+        <TextView
+            android:id="@+id/tv_clip_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Clip Name"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Secondary indicator info (e.g. Speed, audio volume, duration) -->
+        <TextView
+            android:id="@+id/tv_clip_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="1.0x | 100%"
+            android:textColor="@color/accent_cyan"
+            android:textSize="9sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Tiny trim handle indicators on edges -->
+        <View
+            android:id="@+id/left_trim_handle"
+            android:layout_width="6dp"
+            android:layout_height="match_parent"
+            android:background="@color/accent_cyan"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/right_trim_handle"
+            android:layout_width="6dp"
+            android:layout_height="match_parent"
+            android:background="@color/accent_cyan"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
