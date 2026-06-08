@@ -434,7 +434,7 @@ class EditorActivity : AppCompatActivity() {
 
     private fun updateCanvasDimensions(ratio: String) {
         val previewContainer = binding.previewCard
-        val params = previewContainer.layoutParams as FrameLayout.LayoutParams
+        val params = previewContainer.layoutParams as androidx.constraintlayout.widget.ConstraintLayout.LayoutParams
 
         // Keep bounds elegant based on standard device dimensions inside editor container
         val baseSize = resources.displayMetrics.widthPixels.coerceAtMost(resources.displayMetrics.heightPixels) / 2
